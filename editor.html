@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TurboSign Editor</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div id="toolbar">
+    <button data-action="text">📝</button>
+    <button data-action="sign">✍️</button>
+    <button data-action="check">✅</button>
+    <button data-action="circle">⭕</button>
+    <button data-action="delete">🗑️</button>
+    <button data-action="export">📤</button>
+  </div>
+  
+  <div id="formatting-controls">
+    <select id="font-select">
+      <option value="Arial">Arial</option>
+      <option value="Georgia">Georgia</option>
+      <option value="Times New Roman">Times New Roman</option>
+      <option value="Verdana">Verdana</option>
+      <option value="Courier New">Courier New</option>
+    </select>
+    <select id="font-size">
+      <option value="12px">12px</option>
+      <option value="14px" selected>14px</option>
+      <option value="18px">18px</option>
+      <option value="24px">24px</option>
+      <option value="32px">32px</option>
+    </select>
+    <button id="bold-btn"><b>B</b></button>
+    <button id="italic-btn"><i>I</i></button>
+  </div>
+
+  <div id="viewer-container">
+    <canvas id="pdf-canvas"></canvas>
+  </div>
+
+  <div id="signature-modal" class="hidden">
+    <h3>Draw Signature</h3>
+    <canvas id="signature-pad" width="300" height="100"></canvas>
+    <button id="sign-clear">Clear</button>
+    <button id="sign-save">Save</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+  <script src="pdfRenderer.js"></script>
+  <script src="annotations.js"></script>
+  <script src="signatures.js"></script>
+</body>
+</html>

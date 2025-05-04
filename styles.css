@@ -1,0 +1,63 @@
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+#toolbar {
+  display: flex;
+  gap: 6px;
+  padding: 10px;
+  background: #f0f0f0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+#viewer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+
+  position: relative;
+  overflow: auto;
+}
+#pdf-canvas {
+  display: block;
+  margin: 0 auto;
+}
+.annotation {
+  position: absolute;
+  background: transparent;
+  color: black;
+  resize: both;
+  overflow: visible;
+  border: 1px dashed #aaa;
+}
+.hidden {
+  display: none;
+}
+#signature-modal {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 200;
+}
+
+#formatting-controls {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  border-top: 1px solid #ccc;
+  background: #fafafa;
+}
+#formatting-controls select, #formatting-controls button {
+  font-size: 14px;
+}
+.annotation[contenteditable="true"] {
+  outline: 1px dashed #888;
+  padding: 2px;
+}

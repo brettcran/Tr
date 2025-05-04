@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TurboSign</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="landing">
+    <h1>Welcome to TurboSign</h1>
+    <p>Select a PDF or Image to begin:</p>
+    <input type="file" id="file-input" accept=".pdf,image/*" />
+  </div>
+  <script>
+    document.getElementById('file-input').addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        sessionStorage.setItem('uploadData', reader.result);
+        sessionStorage.setItem('uploadName', file.name);
+        window.location.href = 'editor.html';
+      };
+      if (file.type.includes('pdf')) {
+        reader.readAsDataURL(file);
+      } else {
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+</body>
+</html>
